@@ -1,7 +1,7 @@
 from typing import Union
-import urllib.request
 from fastapi import APIRouter
 from schemes.url import *
+from models import get_method, post_method
 
 router = APIRouter()
 
@@ -17,6 +17,8 @@ def read_item(item_id: int, q: Union[str, None] = None):
 
 @router.post("/get/")
 def request_get(get_params: GetParams):
-    request = urllib.request.Request(get_params.url, method="GET")
-    reponse = urllib.request.urlopen(request).read()
-    return {"content": reponse}
+    return get_method.mock_get(get_params)
+
+@router.post("/post/")
+def request_post(post_params: PostParams):
+    return post_method.mock_post(post_params)
