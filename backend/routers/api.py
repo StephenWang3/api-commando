@@ -1,7 +1,7 @@
 from typing import Union
 from fastapi import APIRouter
 from schemes.url import *
-from models import get_method, post_method
+from models import get_method, post_method,put_method,delete_method
 
 router = APIRouter()
 
@@ -22,3 +22,13 @@ def request_get(get_params: GetParams):
 @router.post("/post/")
 def request_post(post_params: PostParams):
     return post_method.mock_post(post_params)
+
+
+@router.put("/put/")
+def request_put(put_params: PutParams):
+    return put_method.mock_put(put_params)
+
+@router.delete("/delete/")
+def request_delete(delete_params: DeleteParams):
+    return delete_method.mock_delete(delete_params)
+
