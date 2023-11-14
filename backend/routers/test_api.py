@@ -9,3 +9,7 @@ def test_get(url):
 @router.post("/post/")
 def test_post():
     return {'foo': 'bar'}
+
+@router.put("/put/")
+def test_put(url):
+    return {'foo': 'bar'}
