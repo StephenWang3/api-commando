@@ -4,7 +4,7 @@ from schemes.url import PutParams
 def mock_put(put_params: PutParams):
 
 
-    response = requests.put(url=put_params.url, 
+    response = requests.post(url=put_params.url, 
                              params=put_params.params, 
                              json=put_params.data,
                              headers=put_params.headers)

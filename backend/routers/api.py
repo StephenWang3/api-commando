@@ -24,11 +24,11 @@ def request_post(post_params: PostParams):
     return post_method.mock_post(post_params)
 
 
-@router.put("/put/")
-def request_put(put_params: PutParams):
+@router.post("/put/")
+def request_post(put_params: PutParams):
     return put_method.mock_put(put_params)
 
-@router.delete("/delete/")
-def request_delete(delete_params: DeleteParams):
+@router.post("/delete/")
+def request_post(delete_params: DeleteParams):
     return delete_method.mock_delete(delete_params)
 

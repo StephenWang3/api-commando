@@ -3,7 +3,7 @@ from schemes.url import DeleteParams
 
 def mock_delete(delete_params: DeleteParams):
 
-    response = requests.delete(url=delete_params.url, 
+    response = requests.post(url=delete_params.url, 
                              params=delete_params.params, )
     
     content = response.content
